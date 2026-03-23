@@ -1,0 +1,5 @@
+| ID | Title | Objective | Coverage | Notes |
+|---|---|---|---|---|
+{% for tc in test_cases %}
+| {{ tc.id | default("") }} | {{ tc.title }} | {{ tc.objective | default("") }} | {{ tc.coverage | default("") }} | {{ tc.notes | default("") }} |
+{% endfor %}

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Render Request",
+  "type": "object",
+  "required": ["format", "source", "output"],
+  "properties": {
+    "format": {
+      "type": "string",
+      "enum": ["markdown", "tdd", "summary", "plain_text", "bdd", "xray", "zephyr"]
+    },
+    "source": { "type": "string" },
+    "output": { "type": "string" }
+  }
+}
