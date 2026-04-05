@@ -1,5 +1,0 @@
-| ID | Path or Rule | Preconditions | Expected Outcome |
-|---|---|---|---|
-{% for tc in test_cases %}
-| {{ tc.id }} | {{ tc.path_reference | default("") }} | {{ tc.preconditions | default("") }} | {{ tc.expected_outcome | default("") }} |
-{% endfor %}

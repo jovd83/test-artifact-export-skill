@@ -212,6 +212,17 @@ If the user asks for a new output format that this repository does not yet suppo
 
 Use `./references/new-destination-research-workflow.md` and `./scripts/scaffold-new-destination.py` to keep this expansion path structured and auditable.
 
+## Gotchas
+
+- **Xray Destination Overwrites**: Importing feature files into Xray without existing Test issue keys will create new Test issues. If you import them into a project where the same scenarios (by title or path) already exist but keys aren't provided in the feature file tags, you may end up with duplicates instead of updates.
+- **Zephyr Scale CSV Header Sensitivity**: The Zephyr Scale CSV importer is highly sensitive to column headers. Do not rename columns in the generated CSV or the import will fail silently or with ambiguous errors.
+- **TestRail Template Matching**: Ensure the exported CSV structure matches the TestRail template type (e.g., *Test Case (Text)* vs. *Test Case (Steps)*) you intend to select during import. Mapping a multi-step format to a single-text template will lead to truncated or poorly formatted steps.
+- **BDD/Gherkin Step Variance**: If the source artifact uses slightly different phrasing for the same step across multiple scenarios, the exporter will preserve that variance. This can lead to fragmented step libraries in tools like Xray Cloud. Normalize steps in the source before exporting if you want them to be reusable.
+- **Character Encoding**: Ensure that your environment supports UTF-8 when generating CSV or feature files. Special characters (like smart quotes or non-ASCII symbols) in the source artifact might be mangled if the file is saved with a different encoding (e.g., Windows-1252), leading to import failures in TestRail or Xray.
+- **Traceability ID Formatting**: Many tools (like Jira-based Xray/Zephyr) require traceability IDs to match a specific regex (e.g., `PROJ-123`). If the source artifact contains malformed IDs, the export will still happen, but the link will fail in the destination tool.
+- **Batch Limits**: Large exports (e.g., >1000 scenarios in one CSV or a massive zip bundle) might hit destination tool API or UI upload limits. Break large test suites into smaller logical chunks before exporting.
+- **Silent Failures in Mapping**: If a required field for a destination is missing in the source, this skill will ask for it. However, if you provide a placeholder, the destination tool might accept the import but ignore the data if it doesn't match the tool's internal validation rules (e.g., priority "High" vs "P1").
+
 ## Guardrails
 
 - Do not redesign coverage.
