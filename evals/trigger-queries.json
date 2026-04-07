@@ -1,0 +1,22 @@
+[
+  {
+    "query": "Convert these approved manual test cases into a Zephyr Scale CSV.",
+    "should_trigger": true
+  },
+  {
+    "query": "Turn these designed checkout scenarios into Xray-ready feature files.",
+    "should_trigger": true
+  },
+  {
+    "query": "Write new boundary-value tests for this pricing rule.",
+    "should_trigger": false
+  },
+  {
+    "query": "Document these existing API scenarios in TDD format.",
+    "should_trigger": true
+  },
+  {
+    "query": "Analyze these requirements and create missing test coverage.",
+    "should_trigger": false
+  }
+]

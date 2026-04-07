@@ -1,0 +1,23 @@
+{% for tag in feature_tags | default([]) %}@{{ tag }}
+{% endfor %}
+Feature: {{ feature_title }}
+  As a {{ persona }}
+  I want {{ behavior }}
+  So that {{ value }}
+
+{% if background is defined and background %}
+  Background:
+{% for step in background %}
+    {{ step }}
+{% endfor %}
+
+{% endif %}
+{% for scenario in scenarios %}
+{% for tag in scenario.tags | default([]) %}@{{ tag }}
+{% endfor %}
+  Scenario: {{ scenario.title }}
+{% for step in scenario.steps %}
+    {{ step }}
+{% endfor %}
+
+{% endfor %}

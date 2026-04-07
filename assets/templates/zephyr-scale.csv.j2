@@ -1,0 +1,10 @@
+Folder,Name,Objective,Status,Precondition,Labels,Step,Expected Result,Execution Type,Priority,Estimated Time,Is Open
+{% for test_case in test_cases %}
+{% if test_case.steps %}
+{% for step in test_case.steps %}
+{% if loop.first %}"{{ test_case.folder | default('Imported Tests') }}","{{ test_case.name }}","{{ test_case.objective | default('') }}","{{ test_case.status | default('Draft') }}","{{ test_case.precondition | default('') }}","{{ (test_case.labels | join(' ')) if test_case.labels else '' }}","{{ step.step | default('') }}","{{ step.expected_result | default('') }}","{{ test_case.execution_type | default('Manual') }}","{{ test_case.priority | default('Medium') }}","{{ test_case.estimated_time | default('5m') }}","{{ test_case.is_open | default('Yes') }}"
+{% else %}"","","","","","","{{ step.step | default('') }}","{{ step.expected_result | default('') }}","","","",""
+{% endif %}
+{% endfor %}
+{% endif %}
+{% endfor %}

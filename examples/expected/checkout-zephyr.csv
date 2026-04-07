@@ -1,0 +1,3 @@
+Folder,Name,Objective,Status,Precondition,Labels,Step,Expected Result,Execution Type,Priority,Estimated Time,Is Open
+"Checkout","Complete checkout with a valid card","Verify the shopper can submit a valid order","Approved","Shopper signed in; cart has one in-stock item","checkout happy-path","Open the checkout page","The checkout summary and payment form are visible","Manual","High","5m","Yes"
+"","","","","","","Enter valid shipping and card details and submit the order","The order is accepted and a confirmation page is displayed","","","",""

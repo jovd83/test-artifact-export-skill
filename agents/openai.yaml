@@ -1,0 +1,5 @@
+interface:
+  display_name: "Test Artifact Export Skill"
+  short_description: "Normalize and export approved test cases"
+  brand_color: "#0F766E"
+  default_prompt: "Use $test-artifact-export-skill to normalize these approved test cases and render them into the requested review or import format."
