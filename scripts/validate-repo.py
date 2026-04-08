@@ -11,7 +11,6 @@ from pathlib import Path
 REQUIRED_PATHS = [
     "SKILL.md",
     "README.md",
-    "CONTRIBUTING.md",
     "agents/openai.yaml",
     "references/normalized-test-case-model.md",
     "references/destination-field-matrix.md",

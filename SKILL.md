@@ -4,6 +4,14 @@ description: Format already-designed test cases, scenarios, or approved test art
 metadata:
   author: jovd83
   version: "1.0.0"
+  dispatcher-category: testing
+  dispatcher-capabilities: test-artifact-export, test-case-formatting, test-management-export
+  dispatcher-accepted-intents: render_test_artifact, export_test_cases, format_test_cases
+  dispatcher-input-artifacts: approved_test_cases, normalized_test_case_model, scenario_list, narrative_test_docs
+  dispatcher-output-artifacts: markdown_test_cases, bdd_feature, xray_feature_bundle, zephyr_csv, testlink_mapping, testrail_mapping
+  dispatcher-stack-tags: testing, framework-agnostic, export
+  dispatcher-risk: low
+  dispatcher-writes-files: true
 ---
 
 # Test Artifact Export Skill
@@ -28,6 +36,15 @@ Do not use this skill to:
 - reverse-engineer unsupported vendor schemas from the web
 
 If the user needs test design first, route them to the relevant test-design or test-planning skill before formatting.
+
+## Dispatcher Integration
+
+Use `skill-dispatcher` as the primary entrypoint when another skill needs export or formatting help from this skill.
+
+- Accept dispatcher-led handoffs for intents such as `render_test_artifact`, `export_test_cases`, or `format_test_cases`.
+- Consume normalized scenario data when available instead of re-deriving business intent from prose.
+- Keep this skill focused on rendering and export. Do not take over technique selection or coverage planning just because the input is thin.
+- Treat direct repo paths to this skill as a compatibility fallback rather than the preferred integration pattern.
 
 ## Read In This Order
 
