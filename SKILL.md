@@ -2,8 +2,10 @@
 name: test-artifact-export-skill
 description: Format already-designed test cases, scenarios, or approved test artifacts into review-ready markdown, TDD-style case specs, plain-text scenario notes, BDD/Gherkin feature files, Xray-compatible Gherkin bundles, Zephyr Scale CSV, TestLink-oriented mappings, or TestRail-oriented mappings. Use when the test logic already exists and Codex must normalize, validate, and render it into a human-review or tool-import contract without inventing missing requirements or coverage.
 metadata:
+    dispatcher-layer: execution
+    dispatcher-lifecycle: active
   author: jovd83
-  version: "1.0.0"
+  version: "1.1.0"
   dispatcher-category: testing
   dispatcher-capabilities: test-artifact-export, test-case-formatting, test-management-export
   dispatcher-accepted-intents: render_test_artifact, export_test_cases, format_test_cases
@@ -17,6 +19,12 @@ metadata:
 # Test Artifact Export Skill
 
 Render existing test-case content into a requested destination format. This skill is for formatting and export, not for test design, coverage generation, or requirements analysis.
+
+
+## Telemetry & Logging
+> [!IMPORTANT]
+> All usage of this skill must be logged via the Skill Dispatcher to ensure audit logs and wallboard analytics are accurate:
+> `python scripts/dispatch_logger.py --skill <skill_name> --intent <intent> --reason <reason>`
 
 ## Scope
 
