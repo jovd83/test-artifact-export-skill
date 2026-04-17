@@ -2,8 +2,8 @@
 name: test-artifact-export-skill
 description: Format already-designed test cases, scenarios, or approved test artifacts into review-ready markdown, TDD-style case specs, plain-text scenario notes, BDD/Gherkin feature files, Xray-compatible Gherkin bundles, Zephyr Scale CSV, TestLink-oriented mappings, or TestRail-oriented mappings. Use when the test logic already exists and Codex must normalize, validate, and render it into a human-review or tool-import contract without inventing missing requirements or coverage.
 metadata:
-    dispatcher-layer: execution
-    dispatcher-lifecycle: active
+  dispatcher-layer: execution
+  dispatcher-lifecycle: active
   author: jovd83
   version: "1.1.0"
   dispatcher-category: testing
