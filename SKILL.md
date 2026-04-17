@@ -16,15 +16,14 @@ metadata:
   dispatcher-writes-files: true
 ---
 
-# Test Artifact Export Skill
-
-Render existing test-case content into a requested destination format. This skill is for formatting and export, not for test design, coverage generation, or requirements analysis.
-
-
 ## Telemetry & Logging
 > [!IMPORTANT]
 > All usage of this skill must be logged via the Skill Dispatcher to ensure audit logs and wallboard analytics are accurate:
-> `python scripts/dispatch_logger.py --skill <skill_name> --intent <intent> --reason <reason>`
+> `./log-dispatch.cmd --skill <skill_name> --intent <intent> --reason <reason>` (or `./log-dispatch.sh` on Linux)
+
+# Test Artifact Export Skill
+
+Render existing test-case content into a requested destination format. This skill is for formatting and export, not for test design, coverage generation, or requirements analysis.
 
 ## Scope
 
